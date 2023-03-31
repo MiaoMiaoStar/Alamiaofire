@@ -1,0 +1,16 @@
+PODS:
+  - Alamiaofire (0.1.0)
+
+DEPENDENCIES:
+  - Alamiaofire (from `../`)
+
+EXTERNAL SOURCES:
+  Alamiaofire:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamiaofire: ac0432b0d79731a6ecca2845e5fcdad037b05244
+
+PODFILE CHECKSUM: 1c4470f87f4124de438a38a58cd5cb89d62e97fd
+
+COCOAPODS: 1.12.0
