@@ -11,11 +11,10 @@
 		368CF1764CB1A890397E8E211C3B2FDC /* Alamiaofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E3CBFC2E49B73576B0609B107F8C64 /* Alamiaofire-dummy.m */; };
 		3CED98F7626992BECEE15D48503070C7 /* Pods-Alamiaofire_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C485D29571D1934B5D9D6C86B99C1 /* Pods-Alamiaofire_Tests-dummy.m */; };
 		6338C370D3743A2311739AE5F433FFC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		8A99E7BE29D6DC6400B1E450 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99E7BD29D6DC6400B1E450 /* Request.swift */; };
+		8A99E7C129D6E6F300B1E450 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99E7C029D6E6F300B1E450 /* Request.swift */; };
 		8F2CB2614519DFBED50749DB1E7105FC /* Pods-Alamiaofire_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0FE4FB5393B4D6F960D57683B49EB89 /* Pods-Alamiaofire_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB5BEF312A6B141E9010AA71A169765C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		B130B113F36F18C8FE0248BF7AE52AE9 /* Alamiaofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 549C140639466E3E579C1E367EBB169E /* Alamiaofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9E9E33AAAF4DCC87E74DAF7B7079DCA /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F10A1398EC7DE1B173D0AE11DE2C2E /* ReplaceMe.swift */; };
 		D2437DB0F6E0F79A05B7F418E87F6ACF /* Pods-Alamiaofire_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BF1E217E29E301DC0C6BFF946AEF0C /* Pods-Alamiaofire_Example-dummy.m */; };
 		F4485AD2A3B5CEE2DDBE5CCAE523757B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +56,7 @@
 		7B4472F164C4DE6E45DD16F2459FA3CF /* Alamiaofire.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Alamiaofire.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7BDD1BA1C7E76ECCF869FEE4397DFE74 /* Alamiaofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamiaofire-Info.plist"; sourceTree = "<group>"; };
 		88313060341477B1ECA3BDFE4D9006B2 /* Pods-Alamiaofire_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Alamiaofire_Example-frameworks.sh"; sourceTree = "<group>"; };
-		8A99E7BD29D6DC6400B1E450 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		8A99E7C029D6E6F300B1E450 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		98BF1E217E29E301DC0C6BFF946AEF0C /* Pods-Alamiaofire_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Alamiaofire_Example-dummy.m"; sourceTree = "<group>"; };
 		9B5C485D29571D1934B5D9D6C86B99C1 /* Pods-Alamiaofire_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Alamiaofire_Tests-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -67,7 +66,6 @@
 		CEAB916C13B232A22F5F698CE7F6D0EF /* Pods-Alamiaofire_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Alamiaofire_Tests-Info.plist"; sourceTree = "<group>"; };
 		D18598043DCD60FE3110A989B24EE808 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D5E3CBFC2E49B73576B0609B107F8C64 /* Alamiaofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamiaofire-dummy.m"; sourceTree = "<group>"; };
-		D6F10A1398EC7DE1B173D0AE11DE2C2E /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Alamiaofire/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		E0FE4FB5393B4D6F960D57683B49EB89 /* Pods-Alamiaofire_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Alamiaofire_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E779A8535D5597ABA991FB122521945D /* Pods-Alamiaofire_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Alamiaofire_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		ED1B9613A6157EDE26D4020910437771 /* Pods-Alamiaofire_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Alamiaofire_Example.modulemap"; sourceTree = "<group>"; };
@@ -136,19 +134,19 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8A99E7BC29D6DC5700B1E450 /* Request */ = {
+		8A99E7BF29D6E6F300B1E450 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				8A99E7BD29D6DC6400B1E450 /* Request.swift */,
+				8A99E7C029D6E6F300B1E450 /* Request.swift */,
 			);
-			path = Request;
+			name = Request;
+			path = Alamiaofire/Classes/Request;
 			sourceTree = "<group>";
 		};
 		9004AFB7A8F14BE4FA158BA05869423D /* Alamiaofire */ = {
 			isa = PBXGroup;
 			children = (
-				8A99E7BC29D6DC5700B1E450 /* Request */,
-				D6F10A1398EC7DE1B173D0AE11DE2C2E /* ReplaceMe.swift */,
+				8A99E7BF29D6E6F300B1E450 /* Request */,
 				E649FC03C7C3B3CB5E60D1E2115F8FD6 /* Pod */,
 				A70B08C6BCA8E62D75C7657DC7F4D4B7 /* Support Files */,
 			);
@@ -384,8 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				368CF1764CB1A890397E8E211C3B2FDC /* Alamiaofire-dummy.m in Sources */,
-				8A99E7BE29D6DC6400B1E450 /* Request.swift in Sources */,
-				B9E9E33AAAF4DCC87E74DAF7B7079DCA /* ReplaceMe.swift in Sources */,
+				8A99E7C129D6E6F300B1E450 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
