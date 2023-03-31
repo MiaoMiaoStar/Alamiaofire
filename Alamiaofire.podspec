@@ -32,6 +32,10 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'Alamiaofire/Classes/**/*'
   
+  s.subspec 'Request' do |ss|
+    ss.source_files = 'Alamiaofire/Classes/Request/*'
+  end
+  
   # s.resource_bundles = {
   #   'Alamiaofire' => ['Alamiaofire/Assets/*.png']
   # }
