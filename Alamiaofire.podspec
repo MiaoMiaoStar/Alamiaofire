@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'Alamiaofire/Classes/**/*'
+  s.source_files = 'Alamiaofire/Classes/*'
   
   s.subspec 'Request' do |ss|
     ss.source_files = 'Alamiaofire/Classes/Request/*'
