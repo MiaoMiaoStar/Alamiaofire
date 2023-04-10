@@ -212,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 37G28R6NSU;
 						LastSwiftMigration = "";
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 37G28R6NSU;
 						LastSwiftMigration = "";
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -291,10 +293,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Alamiaofire_Example/Pods-Alamiaofire_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamiaofire/Alamiaofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamiaofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -483,6 +487,7 @@
 			baseConfigurationReference = 65054EE5C9BFB5E8210460B6 /* Pods-Alamiaofire_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37G28R6NSU;
 				INFOPLIST_FILE = Alamiaofire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,6 +504,7 @@
 			baseConfigurationReference = B19570838DDAAB214E47E42F /* Pods-Alamiaofire_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37G28R6NSU;
 				INFOPLIST_FILE = Alamiaofire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E5135788290D164C2C33E9BB /* Pods-Alamiaofire_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 37G28R6NSU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -536,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FED75651C6B9E9EA7CC59479 /* Pods-Alamiaofire_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 37G28R6NSU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

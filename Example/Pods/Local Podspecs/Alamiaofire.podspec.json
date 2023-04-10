@@ -1,22 +1,31 @@
 {
   "name": "Alamiaofire",
-  "version": "0.1.0",
+  "version": "0.0.3",
   "summary": "A short description of Alamiaofire.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/387970107@qq.com/Alamiaofire",
+  "homepage": "https://github.com/MiaoMiaoStar/Alamiaofire",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
-  "authors": {
-    "387970107@qq.com": "1931115644@qq.com"
-  },
+  "authors": "MiaoMiaoStar",
   "source": {
-    "git": "https://github.com/387970107@qq.com/Alamiaofire.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/MiaoMiaoStar/Alamiaofire.git",
+    "tag": "0.0.3"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "13.0"
   },
-  "source_files": "Alamiaofire/Classes/**/*"
+  "source_files": "Alamiaofire/Classes/*",
+  "dependencies": {
+    "Alamofire": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Request",
+      "source_files": "Alamiaofire/Classes/Request/*"
+    }
+  ]
 }

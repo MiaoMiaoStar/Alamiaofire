@@ -1,16 +1,26 @@
 PODS:
-  - Alamiaofire (0.1.0)
+  - Alamiaofire (0.0.3):
+    - Alamiaofire/Request (= 0.0.3)
+    - Alamofire
+  - Alamiaofire/Request (0.0.3):
+    - Alamofire
+  - Alamofire (5.6.4)
 
 DEPENDENCIES:
   - Alamiaofire (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
 
 EXTERNAL SOURCES:
   Alamiaofire:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamiaofire: ac0432b0d79731a6ecca2845e5fcdad037b05244
+  Alamiaofire: 6718a5548e96dcf6593282a2e2a93b1f915a1a85
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
 
-PODFILE CHECKSUM: 1c4470f87f4124de438a38a58cd5cb89d62e97fd
+PODFILE CHECKSUM: 1325b96614c49061fe3089730a7d8cfe7546b76c
 
 COCOAPODS: 1.12.0
