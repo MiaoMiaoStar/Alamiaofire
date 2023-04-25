@@ -49,6 +49,15 @@ struct DecryptResponse: Codable {
     var isEncrypt: Bool { encrypt != 0 }
 }
 
+
+struct HandyResponse {
+    let code: Int
+    let msg: String
+    let data: String?
+}
+
+
+
 struct NilServerResponse: Codable {
 }
 

@@ -8,6 +8,34 @@
 
 import UIKit
 import Alamiaofire
+import HandyJSON
+
+public struct User: HandyJSON {
+    
+    public var nickname: String!
+    public var face: String!
+    public var is_new: Int?
+    public var user_number: Int!
+    public var pretty_user_number: Int!
+    public var token: String?
+    public var user_id: Int!
+    public var has_verify: Int!
+    public var im_user_sig: String?
+    
+    public init() { }
+    
+    mutating public func mapping(mapper: HelpingMapper) {
+        mapper <<<
+            self.user_id <-- "id"
+    }
+}
+
+struct Cat: HandyJSON {
+    var id: Int64!
+    var name: String!
+}
+
+
 
 
 class ViewController: UIViewController {
@@ -32,6 +60,13 @@ class ViewController: UIViewController {
         ]
         AlamoSession.shared.config.parameters = params
         
+        let jsonString = "{\"code\":200,\"msg\":\"success\",\"data\":{\"cat\":{\"id\":12345,\"name\":\"Kitty\"}}}"
+
+        if let cat = JSONDeserializer<Cat>.deserializeFrom(json:jsonString, designatedPath: "data.cat") {
+            let name = cat.name
+            print("name is \(name)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,9 +84,20 @@ class ViewController: UIViewController {
 //            print(code == .SUCCESS ? "success" : msg)
 //        }
         
-        AlamoSession.shared.request(path: "/Login/login") { code, msg in
-            print(code == .SUCCESS ? "success" : msg)
+//        AlamoSession.shared.request(path: "/Login/login") { code, msg in
+//            print(code == .SUCCESS ? "success" : msg)
+//        }
+        
+
+        AlamoService.shared.request(path: "/Login/login") { (usr: User) in
+            let nickName = usr.nickname
+            
+            print("name = \(usr.nickname), id = \(usr.user_id)")
+        } onFailure: { code, msg in
+            print(msg)
         }
+
+        
     }
     
 }

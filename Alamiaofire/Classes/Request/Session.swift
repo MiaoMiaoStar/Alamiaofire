@@ -116,7 +116,7 @@ extension AlamoSession {
     
     // 请求 判断是否需要加密
     @discardableResult
-    private func sendEncryptOrNot(
+    func sendEncryptOrNot(
         path: String,
         parameters: Parameters? = nil,
         completionHandler completion: @escaping ResponseHanlder
@@ -223,6 +223,7 @@ extension AlamoSession {
             }
         }
     }
+    
     @discardableResult
     private func sendData<T: Codable>(path: String, params: [String: Any?]?, onResult: @escaping (SendResult<ServerResponse<T>>) -> Void) -> DataRequest {
 
@@ -236,7 +237,7 @@ extension AlamoSession {
         }
     }
     
-    private func handleResult(code: ResultCode, message: String) {
+    func handleResult(code: ResultCode, message: String) {
         switch code {
             default:
                 break
