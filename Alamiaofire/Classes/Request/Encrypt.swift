@@ -17,7 +17,7 @@ let PARAM_APP_IV = "6ba6c583615c11a6"
 extension AlamoSession {
     
     
-    public func encrypt(_ parameters: [String: Any]) throws -> [String: Any] {
+    func encrypt(_ parameters: [String: Any]) throws -> [String: Any] {
         let data = try JSONSerialization.data(withJSONObject: parameters)
         let encrptyData = try aes_encrypt.encrrypt(data)
         return ["params": encrptyData.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: UInt(0)))]
@@ -26,7 +26,7 @@ extension AlamoSession {
 
 
 extension AlamoSession {
-    public func decrpty(resonseBase64String: String) throws -> Data {
+    func decrpty(resonseBase64String: String) throws -> Data {
         if let encrptyData = NSData.init(base64EncodedString: resonseBase64String) {
             let decrptyData = try aes_decrypt.decrrypt(encrptyData)
             return decrptyData

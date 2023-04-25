@@ -182,8 +182,9 @@ extension AlamoSession {
 extension AlamoSession {
     
     // 只需要 状态码 和 描述
-    public func request(path: String, params: [String: Any?]? = nil, onResult: @escaping (ResultCode, String) -> Void) {
-        sendData(path: path, params: params) { (result: SendResult<ServerResponse<NilServerResponse>>)  in
+    @discardableResult
+    public func request(path: String, params: [String: Any?]? = nil, onResult: @escaping (ResultCode, String) -> Void) -> DataRequest {
+        return sendData(path: path, params: params) { (result: SendResult<ServerResponse<NilServerResponse>>)  in
             switch result {
             case .success(let res):
                 let code = ResultCode(rawValue: res.code) ?? .ERROR
@@ -199,10 +200,10 @@ extension AlamoSession {
             }
         }
     }
-    
-    public func request<T: Codable>(path: String, params: [String: Any?]? = nil, onSuccess: @escaping (T)->Void, onFailure: @escaping (ResultCode, String) -> Void) {
+    @discardableResult
+    public func request<T: Codable>(path: String, params: [String: Any?]? = nil, onSuccess: @escaping (T)->Void, onFailure: @escaping (ResultCode, String) -> Void) -> DataRequest {
         
-        sendData(path: path, params: params) { (result: SendResult<ServerResponse<T>>) in
+        return sendData(path: path, params: params) { (result: SendResult<ServerResponse<T>>) in
             switch result {
                 case .success(let bean):
                     let code = ResultCode(rawValue: bean.code) ?? .ERROR
@@ -222,10 +223,10 @@ extension AlamoSession {
             }
         }
     }
-    
-    private func sendData<T: Codable>(path: String, params: [String: Any?]?, onResult: @escaping (SendResult<ServerResponse<T>>) -> Void) {
+    @discardableResult
+    private func sendData<T: Codable>(path: String, params: [String: Any?]?, onResult: @escaping (SendResult<ServerResponse<T>>) -> Void) -> DataRequest {
 
-        send(path: path, type: T.self, parameters: params) { result in
+        return send(path: path, type: T.self, parameters: params) { result in
             switch result {
             case .success( let value):
                 onResult(.success(value))
