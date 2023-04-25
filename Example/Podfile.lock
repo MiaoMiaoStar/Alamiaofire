@@ -1,9 +1,9 @@
 PODS:
-  - Alamiaofire (0.0.4):
-    - Alamiaofire/Request (= 0.0.4)
+  - Alamiaofire (0.0.5):
+    - Alamiaofire/Request (= 0.0.5)
     - Alamofire
     - YYKit
-  - Alamiaofire/Request (0.0.4):
+  - Alamiaofire/Request (0.0.5):
     - Alamofire
     - YYKit
   - Alamofire (5.6.4)
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamiaofire: 3ce3f1be4547505f5fc0f27fd680d17f2b4d7cb3
+  Alamiaofire: 8e1959b1bd0cf0d7875e2f268029b3125aac4265
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
