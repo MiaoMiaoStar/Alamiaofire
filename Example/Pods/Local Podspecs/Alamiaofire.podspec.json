@@ -1,6 +1,6 @@
 {
   "name": "Alamiaofire",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "summary": "A short description of Alamiaofire.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/MiaoMiaoStar/Alamiaofire",
@@ -11,7 +11,7 @@
   "authors": "MiaoMiaoStar",
   "source": {
     "git": "https://github.com/MiaoMiaoStar/Alamiaofire.git",
-    "tag": "0.0.3"
+    "tag": "0.0.4"
   },
   "platforms": {
     "ios": "13.0"
@@ -19,6 +19,9 @@
   "source_files": "Alamiaofire/Classes/*",
   "dependencies": {
     "Alamofire": [
+
+    ],
+    "YYKit": [
 
     ]
   },

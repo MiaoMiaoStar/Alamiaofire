@@ -31,9 +31,25 @@ struct ServerResponse<T: Codable>: Codable {
     let data: T?
 }
 
-struct NilServerResponse: Codable {
+struct EncryptResponse: Codable {
     let code: Int
     let msg: String
+    let encrypt: Int?
+    
+    var isEncrypt: Bool { encrypt != 0 }
+}
+
+
+struct DecryptResponse: Codable {
+    let code: Int
+    let msg: String
+    let encrypt: Int?
+    let data: String?
+    
+    var isEncrypt: Bool { encrypt != 0 }
+}
+
+struct NilServerResponse: Codable {
 }
 
 
@@ -58,6 +74,8 @@ public enum SessionError: Swift.Error  {
     
     case dataParsingFailed(Any.Type, Data, Error)
     
+    case requestEcrptyFailed(Any)
+    
     /// An error not defined in the  response occurred.
     case untypedError(error: Error)
     
@@ -77,6 +95,8 @@ extension SessionError: LocalizedError {
             return "数据缺失"
         case .dataParsingFailed:
             return "数据解析出错"
+        case .requestEcrptyFailed:
+            return "参数加密错误"
         case .untypedError:
             return "未知错误"
         case .responseFailed(let detail):

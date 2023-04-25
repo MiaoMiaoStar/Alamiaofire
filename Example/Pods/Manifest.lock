@@ -1,10 +1,15 @@
 PODS:
-  - Alamiaofire (0.0.3):
-    - Alamiaofire/Request (= 0.0.3)
+  - Alamiaofire (0.0.4):
+    - Alamiaofire/Request (= 0.0.4)
     - Alamofire
-  - Alamiaofire/Request (0.0.3):
+    - YYKit
+  - Alamiaofire/Request (0.0.4):
     - Alamofire
+    - YYKit
   - Alamofire (5.6.4)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - Alamiaofire (from `../`)
@@ -12,14 +17,16 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - YYKit
 
 EXTERNAL SOURCES:
   Alamiaofire:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamiaofire: 6718a5548e96dcf6593282a2e2a93b1f915a1a85
+  Alamiaofire: 3ce3f1be4547505f5fc0f27fd680d17f2b4d7cb3
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 PODFILE CHECKSUM: 1325b96614c49061fe3089730a7d8cfe7546b76c
 

@@ -8,26 +8,33 @@
 import Foundation
 
 
-/// Represents a terminator pipeline with a JSON decoder to parse data.
-public class JSONParse: ResponseDataParser {
-    /// An underlying JSON parser of the pipeline.
-    public let parser: JSONDecoder
+
+let parser = JSONDecoder()
+
+extension AlamoSession {
     
-    /// Initializes a `JSONParsePipeline` object.
-    ///
-    /// - Parameter parser: The JSON parser for input data.
-    public init(_ parser: JSONDecoder) {
-        self.parser = parser
+    func parseAndDecrypt<T>(data: Data, type: T.Type) throws -> ServerResponse<T> {
+        let response = try parser.decode(EncryptResponse.self, from: data)
+        if response.isEncrypt {
+            let decryptResponse = try parser.decode(DecryptResponse.self, from: data)
+            if let decryptResponseData = decryptResponse.data {
+                let decryptData = try decrpty(resonseBase64String: decryptResponseData)
+                let  resposeDataModel = try parser.decode(T.self, from: decryptData)
+                let result = ServerResponse(code: response.code, msg: response.msg, data: resposeDataModel)
+                return result
+            } else {
+                return ServerResponse(code: response.code, msg: response.msg, data: nil)
+            }
+        } else {
+            let  result = try parser.decode(ServerResponse<T>.self, from: data)
+            return result
+        }
     }
     
-    /// Parses `data` that holds input values to a `Response` object.
-    ///
-    /// - Parameters:
-    ///   - request: The original request.
-    ///   - data: The `Data` object received from a `Session` object.
-    /// - Returns: The `Response` object.
-    /// - Throws: An error that occurs during the parsing process.
-    public func parse<T: Request>(request: T, data: Data) throws -> T.Response {
-        return try parser.decode(T.Response.self, from: data)
+    func parse<T: Codable>(data: Data, type: T.Type) throws -> T {
+        let response = try parser.decode(T.self, from: data)
+        return response
     }
+    
+    
 }
