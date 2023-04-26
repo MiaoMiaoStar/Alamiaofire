@@ -127,6 +127,8 @@ extension SessionError: LocalizedError {
             return "数据缺失"
         case .dataParsingFailed:
             return "数据解析出错"
+        case .requestEcrptyFailed:
+            return "参数加密错误"
         case .untypedError:
             return "未知错误"
         case .responseFailed(let detail):
