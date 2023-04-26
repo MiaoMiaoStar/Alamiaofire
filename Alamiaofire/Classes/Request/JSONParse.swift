@@ -15,7 +15,7 @@ extension AlamoSession {
     
     func parseAndDecrypt<T>(data: Data, type: T.Type) throws -> ServerResponse<T> {
         let response = try parser.decode(EncryptResponse.self, from: data)
-        guard ResultCode(rawValue: response.code) == .SUCCESS {
+        guard ResultCode(rawValue: response.code) == .SUCCESS else {
             return ServerResponse(code: response.code, msg: response.msg, data: nil)
         }
         if response.isEncrypt  {
