@@ -15,7 +15,10 @@ extension AlamoSession {
     
     func parseAndDecrypt<T>(data: Data, type: T.Type) throws -> ServerResponse<T> {
         let response = try parser.decode(EncryptResponse.self, from: data)
-        if response.isEncrypt {
+        guard ResultCode(rawValue: response.code) == .SUCCESS {
+            return ServerResponse(code: response.code, msg: response.msg, data: nil)
+        }
+        if response.isEncrypt  {
             let decryptResponse = try parser.decode(DecryptResponse.self, from: data)
             if let decryptResponseData = decryptResponse.data {
                 let decryptData = try decrpty(responseBase64String: decryptResponseData)
@@ -29,6 +32,8 @@ extension AlamoSession {
             let  result = try parser.decode(ServerResponse<T>.self, from: data)
             return result
         }
+        
+        
     }
     
     func parse<T: Codable>(data: Data, type: T.Type) throws -> T {
@@ -41,6 +46,9 @@ extension AlamoSession {
 extension AlamoSession {
     func parseAndDecrypt(data: Data) throws -> HandyResponse {
         let response = try parser.decode(EncryptResponse.self, from: data)
+        guard ResultCode(rawValue: response.code) == .SUCCESS else {
+            return HandyResponse(code: response.code, msg: response.msg, data: nil)
+        }
         if response.isEncrypt {
             let decryptResponse = try parser.decode(DecryptResponse.self, from: data)
             if let decryptResponseData = decryptResponse.data {
