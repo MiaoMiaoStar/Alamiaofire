@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Alamiaofire'
-  s.version          = '0.0.5'
+  s.version          = '0.0.6'
   s.summary          = 'A short description of Alamiaofire.'
 
 # This description is used to generate tags and improve search results.
@@ -45,7 +45,7 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'Alamofire'
-   s.dependency 'YYKit'
+#   s.dependency 'YYKit'
    s.dependency 'HandyJSON'
    
 end

@@ -30,6 +30,32 @@ public struct User: HandyJSON {
     }
 }
 
+public struct MUser: Codable, Hashable {
+    
+    public let nickname: String
+    public let face: String
+    public let is_new: Int?
+    public let user_number: Int
+    public let pretty_user_number: Int
+    public let token: String?
+    public let user_id: Int
+    public let has_verify: Int
+    public let im_user_sig: String?
+    
+    
+    private enum CodingKeys: String, CodingKey {
+        case nickname
+        case face
+        case is_new
+        case user_number
+        case pretty_user_number
+        case token
+        case user_id = "id"
+        case has_verify
+        case im_user_sig
+    }
+}
+
 struct Cat: HandyJSON {
     var id: Int64!
     var name: String!
@@ -60,12 +86,12 @@ class ViewController: UIViewController {
         ]
         AlamoSession.shared.config.parameters = params
         
-        let jsonString = "{\"code\":200,\"msg\":\"success\",\"data\":{\"cat\":{\"id\":12345,\"name\":\"Kitty\"}}}"
-
-        if let cat = JSONDeserializer<Cat>.deserializeFrom(json:jsonString, designatedPath: "data.cat") {
-            let name = cat.name
-            print("name is \(name)")
-        }
+//        let jsonString = "{\"code\":200,\"msg\":\"success\",\"data\":{\"cat\":{\"id\":12345,\"name\":\"Kitty\"}}}"
+//
+//        if let cat = JSONDeserializer<Cat>.deserializeFrom(json:jsonString, designatedPath: "data.cat") {
+//            let name = cat.name
+//            print("name is \(name)")
+//        }
         
     }
 
@@ -88,14 +114,21 @@ class ViewController: UIViewController {
 //            print(code == .SUCCESS ? "success" : msg)
 //        }
         
-
-        AlamoService.shared.request(path: "/Login/login") { (usr: User) in
-            let nickName = usr.nickname
-            
+        AlamoSession.shared.request(path: "/Login/login") { (usr: MUser) in
             print("name = \(usr.nickname), id = \(usr.user_id)")
         } onFailure: { code, msg in
             print(msg)
         }
+
+        
+//
+//        AlamoService.shared.request(path: "/Login/login") { (usr: User) in
+//            let nickName = usr.nickname
+//
+//            print("name = \(usr.nickname), id = \(usr.user_id)")
+//        } onFailure: { code, msg in
+//            print(msg)
+//        }
 
         
     }

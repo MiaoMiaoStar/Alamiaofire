@@ -18,7 +18,7 @@ extension AlamoSession {
         if response.isEncrypt {
             let decryptResponse = try parser.decode(DecryptResponse.self, from: data)
             if let decryptResponseData = decryptResponse.data {
-                let decryptData = try decrpty(resonseBase64String: decryptResponseData)
+                let decryptData = try decrpty(responseBase64String: decryptResponseData)
                 let  resposeDataModel = try parser.decode(T.self, from: decryptData)
                 let result = ServerResponse(code: response.code, msg: response.msg, data: resposeDataModel)
                 return result
@@ -44,7 +44,7 @@ extension AlamoSession {
         if response.isEncrypt {
             let decryptResponse = try parser.decode(DecryptResponse.self, from: data)
             if let decryptResponseData = decryptResponse.data {
-                let decryptData = try AlamoSession.shared.decrpty(resonseBase64String: decryptResponseData)
+                let decryptData = try AlamoSession.shared.decrpty(responseBase64String: decryptResponseData)
                 let jsonString = String(data: decryptData, encoding: .utf8)
                 let result = HandyResponse(code: response.code, msg: response.msg, data: jsonString)
                 return result
