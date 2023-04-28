@@ -69,11 +69,16 @@ extension AlamoSession {
         let url = URL(string: req.url)!
         let requestParameters = parameters.compactMapValues(EncodeValue.init)
         let headers = config.headers.map{ HTTPHeader(name: $0.key, value: $0.value)}
-        return AF.request(
-            url,
-            method: .post,
-            parameters: requestParameters,
-            encoder: JSONParameterEncoder.default,
+        return AF.upload(
+            multipartFormData: { mutipartData in
+                requestParameters.forEach { (key, value) in
+                    let dataString = value.asString()
+                    if let data = dataString.data(using: .utf8) {
+                        mutipartData.append(data, withName: key)
+                    }
+                }
+            },
+            to: url,
             headers: HTTPHeaders(headers)
         )
         .response(completionHandler: completion)
@@ -258,5 +263,14 @@ extension AlamoSession {
 //        }
 //    },
 //    to: url,
+//    headers: HTTPHeaders(headers)
+//)
+
+
+//return AF.request(
+//    url,
+//    method: .post,
+//    parameters: requestParameters,
+//    encoder: JSONParameterEncoder.default,
 //    headers: HTTPHeaders(headers)
 //)

@@ -62,6 +62,18 @@ struct Cat: HandyJSON {
 }
 
 
+public struct AppConfig: Codable {
+    public var all_member_push: String? //获取全员推送群ID（传了该参数则会返回配置信息）
+    public var rtc_type: String? //tencent=腾讯；agora=声网
+    public var sup_msg_tip: String? //房管提示语
+    public var sup_msg_warning: String? //房管警告语
+    public var sup_msg_punish: String? // 房管处罚语
+    public var show_pretty_mall: Int //是否关闭商城显示 = 1 打开 = 0 关闭
+    public var black_white_theme: Bool //是否置灰
+    
+    public var isShowPrettySmall: Bool { show_pretty_mall == 1}
+    
+}
 
 
 class ViewController: UIViewController {
@@ -74,16 +86,16 @@ class ViewController: UIViewController {
         AlamoSession.shared.config.reqEncrypt = .some(["/Login/loginSms", "/Login/login"])
         
         let params = [
-            "apns_token": "28A1BCFF5A2B99F98BD5E49B2A8E2323C866A9A861C677B09F718EDF61BEE3BF",
+            "rtc_type": 1,
             "agent": "iPhone13,4-15.4.1",
-            "channel": "iOS",
-            "code": "666666",
-            "device_id": "89C9EDD2-35EB-4CB2-A700-BA328A463804",
-            "device_param": "{\"idfa\":\"E9647C47-F76B-4FE9-BE12-7AF370CCD7FA\"}",
-            "phone": "16675586666",
+            "device_id": "F5E3FEEB-C865-4760-B04F-926E74F3982E",
             "platformDevice": "ios",
-            "version": "1.8.1"
-        ]
+            "all_member_push": 1,
+            "channel": "iOS",
+            "package_name": "net.huidapay.live",
+            "version": "1.9.1",
+            "token": "69255995372afd657a9ddabef0ed932c"
+        ] as [String: Any]
         AlamoSession.shared.config.parameters = params
         
 //        let jsonString = "{\"code\":200,\"msg\":\"success\",\"data\":{\"cat\":{\"id\":12345,\"name\":\"Kitty\"}}}"
@@ -114,9 +126,15 @@ class ViewController: UIViewController {
 //            print(code == .SUCCESS ? "success" : msg)
 //        }
         
-        AlamoSession.shared.request(path: "/Login/login") { (usr: MUser) in
-            print("name = \(usr.nickname), id = \(usr.user_id)")
-        } onFailure: { code, msg in
+//        AlamoSession.shared.request(path: "/Login/login") { (usr: MUser) in
+//            print("name = \(usr.nickname), id = \(usr.user_id)")
+//        } onFailure: { code, msg in
+//            print(msg)
+//        }
+        
+        AlamoSession.shared.request(path: "/app/config", onSuccess: { (config: AppConfig) in
+            print(config)
+        }) { code, msg in
             print(msg)
         }
 
