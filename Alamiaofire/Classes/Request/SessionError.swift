@@ -9,6 +9,7 @@ import Foundation
 
 
 public enum ResultCode: Int {
+    
     /** 成功 */
     case SUCCESS = 2000
     /** 失败 */
@@ -65,7 +66,7 @@ struct NilServerResponse: Codable {
 
 public enum SessionError: Swift.Error  {
     
-    case failure(code: Int,  msg: String)
+    case failure(code: ResultCode,  msg: String)
 
     case dataMissingError(Any.Type)
     
