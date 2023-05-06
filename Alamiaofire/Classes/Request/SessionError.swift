@@ -63,21 +63,9 @@ struct NilServerResponse: Codable {
 
 
 
-
 public enum SessionError: Swift.Error  {
     
-    
-    /// messages returned by the  App server.
-    public struct APIErrorDetail {
-        
-        public let code: ResultCode
-        
-        public let msg: String
-        
-    }
-    
-    /// The associated value `APIErrorDetail` contains error details.
-    case APIError(detail: APIErrorDetail)
+    case failure(code: Int,  msg: String)
 
     case dataMissingError(Any.Type)
     
@@ -94,12 +82,12 @@ public enum SessionError: Swift.Error  {
 }
 
 
-#if DEBUG
-extension SessionError: LocalizedError {
-    public var localizedDescription: String {
+extension SessionError: CustomStringConvertible {
+    
+    public var description: String {
         switch self {
-        case .APIError(let detail):
-            return detail.msg
+        case .failure(_, let msg):
+            return msg
         case .dataMissingError:
             return "数据缺失"
         case .dataParsingFailed:
@@ -116,26 +104,3 @@ extension SessionError: LocalizedError {
     }
 }
 
-#else
-
-extension SessionError: LocalizedError {
-    public var localizedDescription: String {
-        switch self {
-        case .APIError(let detail):
-            return detail.msg
-        case .dataMissingError:
-            return "数据缺失"
-        case .dataParsingFailed:
-            return "数据解析出错"
-        case .requestEcrptyFailed:
-            return "参数加密错误"
-        case .untypedError:
-            return "未知错误"
-        case .responseFailed(let detail):
-            return detail
-        case .networkError:
-            return "网络错误"
-        }
-    }
-}
-#endif
