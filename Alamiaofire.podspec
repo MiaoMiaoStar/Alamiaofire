@@ -6,6 +6,10 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
+# 账号  MiaoMiaoStar
+# 密码 miaomiao2023
+
+
 Pod::Spec.new do |s|
   s.name             = 'Alamiaofire'
   s.version          = '0.0.8'
