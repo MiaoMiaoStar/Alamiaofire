@@ -93,6 +93,10 @@ extension AlamoSession {
         let params = request.parameters ?? [:]
         let pending = config.parameters
         let completeParams = params.merging(pending) {$1}
+#if DEBUG
+        print("request url: \(request.url)")
+        print(completeParams)
+#endif
         return send(req:request, parameters: completeParams, completionHandler: completion)
     }
     
