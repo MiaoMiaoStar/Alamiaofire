@@ -107,7 +107,10 @@ extension AlamoSession {
         let pending = config.parameters
         let completeParams = params.merging(pending) {$1}
         let nonNilParams = completeParams.compactMapValues{$0}
-    
+#if DEBUG
+        print("request url: \(request.url)")
+        print(nonNilParams)
+#endif
         if let encrptyParams = try? encrypt(nonNilParams) {
             return send(req:request, parameters: encrptyParams, completionHandler: completion)
         } else {
